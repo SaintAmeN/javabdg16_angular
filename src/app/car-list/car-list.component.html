@@ -1,1 +1,34 @@
-<p>List Of Cars</p>
+<div>
+  <div class="page-header">List of Car Rental Offers</div>
+  <div class="page-content">
+    <div class="table">
+      <div class="header">
+        <!-- row = 12 columns -->
+        <div class="header-column col-md-1">Id</div>
+        <div class="header-column col-md-2">Make</div>
+        <div class="header-column col-md-2">Model</div>
+        <div class="header-column col-md-2">Body Type</div>
+        <div class="header-column col-md-2">Economy Level</div>
+        <div class="header-column col-md-1">Price</div>
+        <div class="header-column col-md-2 clr">For buttons</div>
+      </div>
+      <div class="item-row" *ngFor="let carOffer of cars">
+        <div class="item-column col-md-1">{{ carOffer.id }}</div>
+        <div class="item-column col-md-2">{{ carOffer.make }}</div>
+        <div class="item-column col-md-2">{{ carOffer.model }}</div>
+        <div class="item-column col-md-2">{{ carOffer.type }}</div>
+        <div class="item-column col-md-2">{{ carOffer.economy }}</div>
+        <div class="item-column col-md-1">{{ carOffer.price }}</div>
+        <div class="item-column col-md-2 clr">
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteCarOffer(carOffer)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

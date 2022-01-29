@@ -1,1 +1,75 @@
-<p>car-rental-form works!</p>
+<div>
+  <div class="page-header">Car Rental Offer Form</div>
+  <div class="page-content">
+    <!-- <form (ngSubmit)="submitCarOffer(f)" #f="ngForm"> -->
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input
+          type="text"
+          class="form-control"
+          id="make"
+          [(ngModel)]="carRentalObject.make"
+          required
+          [disabled]="!formActive"
+        />
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input
+          type="text"
+          class="form-control"
+          id="model"
+          [(ngModel)]="carRentalObject.model"
+          required
+          [disabled]="!formActive"
+        />
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select
+          class="form-control"
+          id="type"
+          [(ngModel)]="carRentalObject.type"
+          required
+          [disabled]="!formActive"
+        >
+          <option value="SUV">SUV</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="economy">Economy</label>
+        <input
+          type="number"
+          min="0"
+          max="10"
+          step="0.01"
+          class="form-control"
+          id="economy"
+          [(ngModel)]="carRentalObject.economy"
+          required
+          [disabled]="!formActive"
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          min="0.01"
+          step="0.01"
+          class="form-control"
+          id="price"
+          [(ngModel)]="carRentalObject.price"
+          required
+          [disabled]="!formActive"
+        />
+      </div>
+      <div class="button-row">
+        <button type="button" class="btn btn-warning col-3" (click)="clearCarOfferForm()">Clear form</button>
+        <button type="button" class="btn btn-primary offset-6 col-3" (click)="submitCarOffer()">Submit</button>
+      </div>
+    <!-- </form> -->
+  </div>
+  <div *ngIf="notification!=null" class="page-notification alert alert-dark" role="alert">
+    {{notification}}
+  </div>
+</div>
