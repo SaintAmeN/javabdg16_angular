@@ -33,7 +33,7 @@
           required
           [disabled]="!formActive"
         >
-          <option value="SUV">SUV</option>
+          <option *ngFor="let bodyType of carBodyTypes" [value]="bodyType">{{bodyType}}</option>
         </select>
       </div>
       <div class="form-group">

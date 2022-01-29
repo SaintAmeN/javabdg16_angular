@@ -23,6 +23,8 @@ export class CarRentalFormComponent implements OnInit {
   notification: any;
   clearNotificationInterval: any;
 
+  carBodyTypes: string[] = ['SUV','CABRIO','SEDAN'];
+
   submitCarOffer() {
     this.formActive = false;
 
@@ -36,18 +38,17 @@ export class CarRentalFormComponent implements OnInit {
         this.clearCarOfferForm();
         this.notification = 'Car Offer has been saved!';
 
-        if (this.clearNotificationInterval !=null){
+        if (this.clearNotificationInterval != null) {
           clearTimeout(this.clearNotificationInterval);
         }
 
-        this.clearNotificationInterval = setTimeout(
-          ()=>{
+        this.clearNotificationInterval = setTimeout(() => {
           this.clearNotification();
         }, 3000);
       });
   }
 
-  clearNotification(){
+  clearNotification() {
     this.notification = null;
     this.clearNotificationInterval = null;
   }
