@@ -6,3 +6,8 @@
 .menu-item-colored-active:hover{
   color: darkblue !important;
 }
+
+.container-content{
+  min-height: 80vh;
+  background-color: #efefef;
+}

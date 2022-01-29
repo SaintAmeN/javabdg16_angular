@@ -1,0 +1,9 @@
+.blinking{
+  animation: blinking-background-animation 2s infinite;
+}
+
+@keyframes blinking-background-animation {
+  0% {color: inherit;}
+  50% {color: red;}
+  100% {color: inherit;}
+}
